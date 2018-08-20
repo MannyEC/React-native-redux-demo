@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Button, StyleSheet } from 'react-native';
 import PropTypes from 'prop-types';
 
-const HomeComponent = (props) => {
+const PageComponent = (props) => {
   const { routeName } = props.navigation.state;
   return (
     <View style={styles.container}>
@@ -12,8 +12,17 @@ const HomeComponent = (props) => {
       <View style={styles.btn}>
         <Button
           title="Go Next Page"
+          color="red"
           onPress={() => {
-            props.navigation.navigate('Page1');
+            props.navigation.navigate('Page3');
+          }}
+        />
+      </View>
+      <View style={styles.btn}>
+        <Button
+          title="Go Pump Page"
+          onPress={() => {
+            props.navigation.navigate('Pump');
           }}
         />
       </View>
@@ -21,10 +30,9 @@ const HomeComponent = (props) => {
   );
 };
 
-HomeComponent.propTypes = {
+PageComponent.propTypes = {
   navigation: PropTypes.object.isRequired,
 };
-
 
 const styles = StyleSheet.create({
   container: {
@@ -34,7 +42,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     marginTop: 20,
-    width: '50%',
+    width: '50%'
   }
 });
-export default HomeComponent;
+export default PageComponent;

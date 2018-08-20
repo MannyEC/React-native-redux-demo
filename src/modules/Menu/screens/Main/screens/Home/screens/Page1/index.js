@@ -1,7 +1,7 @@
-import HomeContainer from './containers/HomeContainer';
+import PageContainer from './containers/PageContainer';
 
 const nav = {
-  screen: HomeContainer,
+  screen: PageContainer,
   navigationOptions: {
     header: null,
   }

@@ -1,3 +1,7 @@
 import LoginContainer from './containers/LoginContainer';
 
-export default LoginContainer;
+const nav = {
+  screen: LoginContainer,
+};
+
+export default nav;

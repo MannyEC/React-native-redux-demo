@@ -1,3 +1,7 @@
 import PumpContainer from './containers/PumpContainer';
 
-export default PumpContainer;
+const nav = {
+  screen: PumpContainer,
+};
+
+export default nav;

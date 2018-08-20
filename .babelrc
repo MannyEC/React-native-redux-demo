@@ -1,6 +1,14 @@
 {
   "presets": ["react-native"],
   "plugins": [
-    ["import", { libraryName: "antd-mobile-rn" }]
+    ["import", { libraryName: "antd-mobile-rn" }],
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "utils": "./src/utils",
+        "appState": "./src/appState",
+        "providers": "./src/providers",
+      }
+    }],
   ]
 }

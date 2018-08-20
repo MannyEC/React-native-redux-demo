@@ -6,32 +6,34 @@ import PropTypes from 'prop-types';
 const LoginScreen = (props) => {
   login = () => {
     props.authStateActions.login();
-  }
+  };
 
-  return (<ImageBackground source={require('../../../images/bg.png')} style={styles.container}>
-    <View style={styles.inputList}>
-      <TextInput
-        placeholder="username"
-        placeholderTextColor="#a2a2a2"
-        underlineColorAndroid="white"
-        style={styles.inputItem}
-        onChangeText={value => this.setState({ username: value })}
-      />
-      <TextInput
-        placeholder="password"
-        secureTextEntry
-        underlineColorAndroid="white"
-        placeholderTextColor="#a2a2a2"
-        style={styles.inputItem}
-        onChangeText={value => this.setState({ password: value })}
-      />
-      <Button
-        style={styles.loginButton}
-        onPress={this.login}
-        title="LOGIN"
-      />
-    </View>
-  </ImageBackground>)
+  return (
+    <ImageBackground source={require('../../../images/bg.png')} style={styles.container}>
+      <View style={styles.inputList}>
+        <TextInput
+          placeholder="username"
+          placeholderTextColor="#a2a2a2"
+          underlineColorAndroid="white"
+          style={styles.inputItem}
+          onChangeText={}
+        />
+        <TextInput
+          placeholder="password"
+          secureTextEntry
+          underlineColorAndroid="white"
+          placeholderTextColor="#a2a2a2"
+          style={styles.inputItem}
+          onChangeText={}
+        />
+        <Button
+          style={styles.loginButton}
+          onPress={this.login}
+          title="LOGIN"
+        />
+      </View>
+    </ImageBackground>
+  );
 };
 
 LoginScreen.navigationOptions = {

@@ -1,3 +1,7 @@
 import HistoryContainer from './containers/HistoryContainer';
 
-export default HistoryContainer;
+const nav = {
+  screen: HistoryContainer
+};
+
+export default nav;

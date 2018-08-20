@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const PumpComponent = (props) => {
+const Counter = () => {
   return (
     <View>
       <Text>
-        Pump Page
+        Counter
       </Text>
     </View>
   );
 };
 
-export default PumpComponent;
+export default Counter;

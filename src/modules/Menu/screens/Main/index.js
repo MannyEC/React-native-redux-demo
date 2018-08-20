@@ -1,3 +1,7 @@
-import MainNavigation from './MainNavigation';
+import screens from './screens';
 
-export default MainNavigation;
+const nav = {
+  screen: screens
+};
+
+export default nav;

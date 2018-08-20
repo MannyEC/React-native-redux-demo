@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text } from 'react-native';
 
-const PumpComponent = (props) => {
+const Setting = () => {
   return (
     <View>
       <Text>
-        Pump Page
+        Setting
       </Text>
     </View>
   );
 };
 
-export default PumpComponent;
+export default Setting;

@@ -6,7 +6,7 @@ import * as AuthStateActions from 'appState/modules/auth/actions';
 import asyncProvider from 'providers/asyncProvider';
 
 const mapStateToProps = state => ({
-  // auth: state.demo.welcome,
+  form: state.form,
 });
 
 const mapDispatchToProps = dispatch => ({

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { TextInput, View, Image, StyleSheet, TouchableOpacity, ImageBackground, Button } from 'react-native';
+import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
+import LoginForm from './LoginForm';
 // import Device from 'utils/device';
 
 const LoginScreen = (props) => {
@@ -11,26 +13,7 @@ const LoginScreen = (props) => {
   return (
     <ImageBackground source={require('../../../images/bg.png')} style={styles.container}>
       <View style={styles.inputList}>
-        <TextInput
-          placeholder="username"
-          placeholderTextColor="#a2a2a2"
-          underlineColorAndroid="white"
-          style={styles.inputItem}
-          onChangeText={}
-        />
-        <TextInput
-          placeholder="password"
-          secureTextEntry
-          underlineColorAndroid="white"
-          placeholderTextColor="#a2a2a2"
-          style={styles.inputItem}
-          onChangeText={}
-        />
-        <Button
-          style={styles.loginButton}
-          onPress={this.login}
-          title="LOGIN"
-        />
+        <LoginForm handleSubmit={this.login} />
       </View>
     </ImageBackground>
   );

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { TextInput, View, StyleSheet, Button, Text } from 'react-native';
+import { TextInput, View, StyleSheet, Button, Text, TouchableOpacity } from 'react-native';
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 
@@ -9,7 +9,6 @@ const renderInput = ({
   secureTextEntry,
   meta: { touched, error, warning }
 }) => {
-  console.log(error)
   return (
     <View>
       <TextInput
@@ -21,42 +20,26 @@ const renderInput = ({
         style={styles.inputItem}
       />
       <View>
-        {touched &&
-          ((error && <Text>{error}</Text>) ||
-            (warning && <Text>{warning}</Text>))}
+        {error && <Text>{error}</Text>}
       </View>
     </View>
   );
 };
 
-const validate = (values) => {
-  const errors = {};
-  console.log(values)
-  if (!values.username) {
-    errors.username = 'Required';
-  } else if (values.username.length > 15) {
-    errors.username = 'Must be 15 characters or less';
-  }
-  return errors;
-};
-
-const warn = (values) => {
-  const warnings = {};
-  if (values.age < 19) {
-    warnings.age = 'Hmm, you seem a bit young...';
-  }
-  return warnings;
-};
-
 let LoginForm = (props) => {
-  const { handleSubmit } = props;
+  const { handleSubmit, submitAction } = props;
   return (
     <View style={styles.inputList}>
-      <Field name="username" component={renderInput} placeholder="username" />
+      <Field
+        name="username"
+        type="text"
+        component={renderInput}
+        placeholder="username"
+      />
       <Field name="password" component={renderInput} placeholder="password" secureTextEntry />
       <Button
         style={styles.loginButton}
-        onPress={props.handleSubmit}
+        onPress={() => handleSubmit(submitAction)()}
         title="LOGIN"
       />
     </View>
@@ -90,6 +73,4 @@ const styles = StyleSheet.create({
 
 export default reduxForm({
   form: 'login',
-  validate,
-  warn,
 })(LoginForm);

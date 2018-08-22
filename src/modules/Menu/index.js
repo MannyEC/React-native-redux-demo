@@ -1,10 +1,17 @@
 import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import { Icon } from 'antd-mobile-rn';
-import screens from './screens';
+import { createDrawerNavigator } from 'react-navigation';
+import Main from './Main';
+import History from './History';
+
+const subNav = createDrawerNavigator({
+  Main,
+  History,
+});
 
 const nav = {
-  screen: screens,
+  screen: subNav,
   navigationOptions: ({ navigation }) => ({
     title: 'Menu',
     headerLeft: (

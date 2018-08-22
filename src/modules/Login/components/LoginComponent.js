@@ -3,17 +3,17 @@ import { TextInput, View, Image, StyleSheet, TouchableOpacity, ImageBackground, 
 import { Field, reduxForm } from 'redux-form';
 import PropTypes from 'prop-types';
 import LoginForm from './LoginForm';
-// import Device from 'utils/device';
+import Device from 'helpers/Device';
 
 const LoginScreen = (props) => {
-  login = () => {
-    props.authStateActions.login();
+  login = (value) => {
+    props.authStateActions.login(value);
   };
 
   return (
     <ImageBackground source={require('../../../images/bg.png')} style={styles.container}>
       <View style={styles.inputList}>
-        <LoginForm handleSubmit={this.login} />
+        <LoginForm submitAction={this.login} />
       </View>
     </ImageBackground>
   );

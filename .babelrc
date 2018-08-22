@@ -8,6 +8,7 @@
         "utils": "./src/utils",
         "appState": "./src/appState",
         "providers": "./src/providers",
+        "helpers": "./src/helpers",
       }
     }],
   ]

@@ -12,7 +12,7 @@ class AppView extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={styles.container}>
         <AppNavigatorContainer />
       </View>
     );
@@ -20,9 +20,8 @@ class AppView extends Component {
 }
 
 const styles = StyleSheet.create({
-  centered: {
+  container: {
     flex: 1,
-    alignSelf: 'center'
   }
 });
 
